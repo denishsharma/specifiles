@@ -1,0 +1,98 @@
+{
+  "name": "specifiles",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "Denish Sharma",
+    "email": "denishcommon@gmail.com"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denishsharma/specifiles.git"
+  },
+  "bugs": {
+    "url": "https://github.com/denishsharma/specifiles/issues"
+  },
+  "keywords": [
+    "specifiles",
+    "storage",
+    "github"
+  ],
+  "scripts": {
+    "start": "node bin/server.js",
+    "build": "node ace build",
+    "dev": "node ace serve --hmr",
+    "test": "node ace test",
+    "lint": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "imports": {
+    "#controllers/*": "./app/controllers/*.js",
+    "#exceptions/*": "./app/exceptions/*.js",
+    "#models/*": "./app/models/*.js",
+    "#mails/*": "./app/mails/*.js",
+    "#services/*": "./app/services/*.js",
+    "#listeners/*": "./app/listeners/*.js",
+    "#events/*": "./app/events/*.js",
+    "#middleware/*": "./app/middleware/*.js",
+    "#validators/*": "./app/validators/*.js",
+    "#providers/*": "./providers/*.js",
+    "#policies/*": "./app/policies/*.js",
+    "#abilities/*": "./app/abilities/*.js",
+    "#database/*": "./database/*.js",
+    "#start/*": "./start/*.js",
+    "#tests/*": "./tests/*.js",
+    "#config/*": "./config/*.js"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": "^7.13.1",
+    "openapi-types": "^12.1.3"
+  },
+  "dependencies": {
+    "@adonisjs/auth": "^9.2.3",
+    "@adonisjs/core": "^6.12.0",
+    "@adonisjs/cors": "^2.2.1",
+    "@adonisjs/lucid": "^21.1.0",
+    "@vinejs/vine": "^2.1.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@adonisjs/assembler": "^7.7.0",
+    "@adonisjs/eslint-config": "^1.3.0",
+    "@adonisjs/eslint-plugin": "^1.3.0",
+    "@adonisjs/prettier-config": "^1.3.0",
+    "@adonisjs/tsconfig": "^1.3.0",
+    "@antfu/eslint-config": "^2.21.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@japa/api-client": "^2.0.3",
+    "@japa/assert": "^3.0.0",
+    "@japa/plugin-adonisjs": "^3.0.1",
+    "@japa/runner": "^3.1.4",
+    "@swc/core": "^1.6.3",
+    "@types/node": "^20.14.6",
+    "eslint": "^8.57.0",
+    "eslint-plugin-format": "^0.1.2",
+    "hot-hook": "^0.2.6",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "pino-pretty": "^11.2.1",
+    "prettier": "^3.3.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "hotHook": {
+    "boundaries": [
+      "./app/controllers/**/*.ts",
+      "./app/middleware/*.ts"
+    ]
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm lint"
+    ]
+  }
+}
